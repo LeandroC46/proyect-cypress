@@ -1,0 +1,30 @@
+# Este archivo .gitignore le indica a Git qué archivos o carpetas debe ignorar
+# en el repositorio. Esto es útil para evitar que archivos innecesarios o 
+# específicos del entorno de desarrollo sean rastreados y versionados.
+
+# Ignorar la carpeta node_modules, que contiene todas las dependencias 
+# del proyecto instaladas por npm/yarn. Esta carpeta no debe subirse al 
+# repositorio ya que puede regenerarse usando el archivo package.json.
+node_modules/*
+
+# Ignorar archivos generados por Cypress como videos o capturas de pantalla.
+cypress/videos/
+cypress/screenshots/
+
+# Ignorar archivos de configuración específicos del entorno.
+*.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Ignorar archivos de registro de depuración y cache de npm.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignorar la carpeta de caché de Cypress.
+.cypress_cache/
+
+# Otros archivos o carpetas opcionales que puedes ignorar:
+# .DS_Store (en caso de que uses macOS)
