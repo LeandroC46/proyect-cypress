@@ -6,17 +6,12 @@
 # del proyecto instaladas por npm/yarn. Esta carpeta no debe subirse al 
 # repositorio ya que puede regenerarse usando el archivo package.json.
 node_modules/*
+allure-report/*
+allure-results/*
 
 # Ignorar archivos generados por Cypress como videos o capturas de pantalla.
 cypress/videos/
 cypress/screenshots/
-
-# Ignorar archivos de configuración específicos del entorno.
-*.env
-.env.local
-.env.development
-.env.test
-.env.production
 
 # Ignorar archivos de registro de depuración y cache de npm.
 npm-debug.log*
