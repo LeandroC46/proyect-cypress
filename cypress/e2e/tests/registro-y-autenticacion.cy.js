@@ -3,6 +3,9 @@ const { CommonPageMethods } = require("../pages/common-page/common-page.methods"
 const { SignupMethods } = require("../pages/singup/signup.methods");
 const { Logger } = require("../util/logger");
 
+const username = CommonPageMethods.generateRandomString();
+const password = CommonPageMethods.generateRandomString(7);
+
 describe(CommonPageData.testSuites.registroYAutenticacion, () => {
     it('Registro de usuario válido', ()=>{
         Logger.stepNumber(1)
@@ -15,8 +18,8 @@ describe(CommonPageData.testSuites.registroYAutenticacion, () => {
 
         Logger.stepNumber(3)
         Logger.step('Completar todos los campos obligatorios con información válida.')
-        SignupMethods.insertUsername('TestTersst1Test');
-        SignupMethods.insertPassword('TestTest104Test');
+        SignupMethods.insertUsername(username);
+        SignupMethods.insertPassword(password);
 
         Logger.stepNumber(4)
         Logger.step('Hacer clic en "Sign up" para registrar el usuario.')
