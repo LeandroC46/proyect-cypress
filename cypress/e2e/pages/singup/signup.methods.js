@@ -1,3 +1,4 @@
+import { CommonPageMethods } from "../common-page/common-page.methods";
 import { SignupElements } from "./signup.elements";
 
 export class SignupMethods{
@@ -18,4 +19,9 @@ export class SignupMethods{
         this.insertPassword(password),
         this.clickOnSignupButton()
     }
-}
+
+    static verifySignupSuccessfulMessageDisplayed(){
+        cy.wait(1000)
+        CommonPageMethods.verifyAlert("Sign up successful.")
+    };
+};
