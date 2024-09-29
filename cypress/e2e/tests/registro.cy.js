@@ -1,11 +1,11 @@
 const { CommonPageData } = require("../pages/common-page/common-page.data");
 const { CommonPageMethods } = require("../pages/common-page/common-page.methods");
+const { LoginData } = require("../pages/login/login.data");
 const { SignupMethods } = require("../pages/singup/signup.methods");
 const { Logger } = require("../util/logger");
 
 const username = CommonPageMethods.generateRandomString();
 const password = CommonPageMethods.generateRandomString(7);
-const existingUsername = "TestingLQA";
 
 
 
@@ -42,7 +42,7 @@ describe(CommonPageData.testSuites.registro, () => {
 
         Logger.stepNumber(3)
         Logger.step('Completar algunos campos con información inválida.')
-        SignupMethods.insertUsername(existingUsername);
+        SignupMethods.insertUsername(LoginData.validCredentials.username);
         SignupMethods.insertPassword(password);
 
         Logger.stepNumber(4)
