@@ -1,4 +1,5 @@
 import { Logger } from "../../util/logger";
+import { CommonPageMethods } from "../common-page/common-page.methods";
 import { LoginElements } from "./login.elements";
 
 export class LoginMethods {
@@ -22,4 +23,9 @@ export class LoginMethods {
         Logger.subStep('Click on Login button')
         this.clickOnLoginButton()
     }
+
+    static verifyWrongPasswordMessageDisplayed(){
+        cy.wait(1000)
+        CommonPageMethods.verifyAlert("Wrong password.")
+    };
 }
