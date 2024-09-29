@@ -24,4 +24,9 @@ export class SignupMethods{
         cy.wait(1000)
         CommonPageMethods.verifyAlert("Sign up successful.")
     };
+
+    static verifySignupUserAlreadyExistMessageDisplayed(){
+        cy.wait(1000)
+        CommonPageMethods.verifyAlert("This user already exist.")
+    };
 };
