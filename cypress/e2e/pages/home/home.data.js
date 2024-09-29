@@ -6,4 +6,11 @@ export class HomeData{
             nexus6: 'Nexus 6'
         }
     }
+
+    static get monitorNames(){
+        return{
+            appleMonitor24: 'Apple monitor 24',
+            asusFullHd: 'ASUS Full HD',
+        }
+    }
 }
