@@ -22,6 +22,7 @@ describe(CommonPageData.testSuites.autenticacion, () => {
         Logger.stepNumber(4)
         Logger.step('Hacer clic en "Log in" para iniciar sesión.')
         LoginMethods.clickOnLoginButton();
+        Logger.stepNumber(5)
         Logger.verification('Verificar que se redirige al usuario a la página de inicio.')
         CommonPageMethods.verifySignedUser(LoginData.validCredentials.username)
     });
@@ -43,6 +44,7 @@ describe(CommonPageData.testSuites.autenticacion, () => {
         Logger.stepNumber(4)
         Logger.step('Hacer clic en "Log in" para iniciar sesión.')
         LoginMethods.clickOnLoginButton();
+        Logger.stepNumber(5)
         Logger.verification('Verificar que se muestra un mensaje de error "Wrong password."')
         LoginMethods.verifyWrongPasswordMessageDisplayed();
     });

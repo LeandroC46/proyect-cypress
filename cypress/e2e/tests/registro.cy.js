@@ -27,6 +27,7 @@ describe(CommonPageData.testSuites.registro, () => {
         Logger.stepNumber(4)
         Logger.step('Hacer clic en "Sign up" para registrar el usuario.')
         SignupMethods.clickOnSignupButton()
+        Logger.stepNumber(5)
         Logger.verification('Verificar que se muestre el mensaje "Sign up successful."')
         SignupMethods.verifySignupSuccessfulMessageDisplayed();
     });
@@ -48,6 +49,7 @@ describe(CommonPageData.testSuites.registro, () => {
         Logger.stepNumber(4)
         Logger.step('Hacer clic en "Sign up" para registrar el usuario.')
         SignupMethods.clickOnSignupButton()
+        Logger.stepNumber(5)
         Logger.verification('Verificar que se muestre el mensaje "This user already exist."')
         SignupMethods.verifySignupUserAlreadyExistMessageDisplayed();
     });

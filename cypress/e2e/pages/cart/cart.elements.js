@@ -11,6 +11,10 @@ export class CartElements {
         return {
             delete(productName) {
                 return cy.contains('td', productName).closest('tr').find('a');
+            },
+            
+            product(productName) {
+                return cy.contains('td', productName);
             }
         }
     }
