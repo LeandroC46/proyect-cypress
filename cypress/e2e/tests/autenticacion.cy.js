@@ -28,7 +28,6 @@ describe(CommonPageData.testSuites.autenticacion, () => {
 
         Logger.postCondition('Log out')
         CommonPageMethods.logout();
-        cy.wait(10000)
     });
 
     it('Inicio de sesión inválido', () => {

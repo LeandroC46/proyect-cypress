@@ -7,8 +7,6 @@ const { Logger } = require("../util/logger");
 const username = CommonPageMethods.generateRandomString();
 const password = CommonPageMethods.generateRandomString(7);
 
-
-
 describe(CommonPageData.testSuites.registro, () => {
     it("Registro de usuario válido", ()=>{
         Logger.stepNumber(1)

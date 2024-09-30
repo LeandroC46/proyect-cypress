@@ -31,6 +31,9 @@ describe(CommonPageData.testSuites.catalogoYCompras, () => {
         Logger.verification('Verificar que se muestra la lista de productos correspondiente a la categoría seleccionada.')
         HomeMethods.verifyProductDisplayed(HomeData.monitorNames.appleMonitor24);
         HomeMethods.verifyProductDisplayed(HomeData.monitorNames.asusFullHd);
+
+        Logger.postCondition('Log out')
+        CommonPageMethods.logout();
     })
 
     it('Agregar producto al carrito', () => {
@@ -65,6 +68,9 @@ describe(CommonPageData.testSuites.catalogoYCompras, () => {
         ProductDetailsMethods.verifyProductAddedMessageDisplayed();
         CommonPageMethods.clickOnCartOption();
         CartMethods.verifyProductOnCart(HomeData.monitorNames.appleMonitor24);
+
+        Logger.postCondition('Limpiar carrito y realizar un log out')
+        CartMethods.emptyCart(LoginData.validCredentials.username, LoginData.validCredentials.password);
     })
 
     it('Realizar una compra', () => {
