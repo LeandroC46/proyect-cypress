@@ -32,29 +32,36 @@ export class CommonPageMethods {
         CommonPageElements.topMenu.signup.click();
     }
 
-    static verifyAlert(expectedMessage){
+    static verifyAlert(expectedMessage) {
         cy.on('window:alert', (str) => {
             expect(str).to.equal(expectedMessage);
         });
     }
 
-    static generateRandomString(length=10) {
+    static generateRandomString(length = 10) {
         let result = '';
         const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
         const charactersLength = characters.length;
         let counter = 0;
         while (counter < length) {
-          result += characters.charAt(Math.floor(Math.random() * charactersLength));
-          counter += 1;
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
         }
         return result;
     }
 
-    static verifySignedUser(username){
+    static verifySignedUser(username) {
         CommonPageElements.signedUser.should('have.text', `Welcome ${username}`)
     }
 
     static verifyUrlContain(textContainUrl) {
         cy.url().should('include', textContainUrl);
+    }
+
+    static logout() {
+        cy.get('body').then($body => {
+            if($body.find('#logout2').length>0)
+                CommonPageElements.topMenu.logout.click();
+        })
     }
 }
