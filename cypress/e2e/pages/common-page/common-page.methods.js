@@ -52,4 +52,8 @@ export class CommonPageMethods {
     static verifySignedUser(username){
         CommonPageElements.signedUser.should('have.text', `Welcome ${username}`)
     }
+
+    static verifyUrlContain(textContainUrl) {
+        cy.url().should('include', textContainUrl);
+    }
 }

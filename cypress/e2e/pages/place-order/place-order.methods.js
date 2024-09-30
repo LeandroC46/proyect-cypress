@@ -1,3 +1,5 @@
+import { Logger } from "../../util/logger";
+import { PlaceOrderData } from "./place-order.data";
 import { PlaceOrderElements } from "./place-order.elements";
 
 export class PlaceOrderMethods{
@@ -31,5 +33,20 @@ export class PlaceOrderMethods{
 
     static clickOnPurchaseButton(){
         PlaceOrderElements.buttons.purchase.click();
+    }
+
+    static completePlaceOrderFields() {
+        Logger.subStep('Insertar "Name" en place order')
+        this.insertName(PlaceOrderData.testData.name),
+        Logger.subStep('Insertar "Country" en place order')
+        this.insertCountry(PlaceOrderData.testData.country),
+        Logger.subStep('Insertar "City" en place order')
+        this.insertCity(PlaceOrderData.testData.city),
+        Logger.subStep('Insertar "Credit card" en place order')
+        this.insertCreditCard(PlaceOrderData.testData.creditCardNumber),
+        Logger.subStep('Insertar "Month" en place order')
+        this.insertMonth(PlaceOrderData.testData.month),
+        Logger.subStep('Insertar "Year" en place order')
+        this.insertYear(PlaceOrderData.testData.year)
     }
 }

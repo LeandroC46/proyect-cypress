@@ -1,3 +1,4 @@
+import { CommonPageMethods } from "../common-page/common-page.methods";
 import { HomeElements } from "./home.elements";
 
 export class HomeMethods{
@@ -19,5 +20,9 @@ export class HomeMethods{
 
     static verifyProductDisplayed(productName){
         HomeElements.product(productName).should('be.visible')
+    }
+
+    static verifyHomePageIsShow(){
+        CommonPageMethods.verifyUrlContain('index.html');
     }
 }
