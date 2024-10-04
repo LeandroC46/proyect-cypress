@@ -5,17 +5,19 @@
   "main": "index.js",
   "scripts": {
     "clean-reports": "rimraf ./allure-report && rimraf ./allure-results",
-    "exec-test":"npx cypress run --headed --env allure=true",
-    "generate-report":"npx allure generate allure-results -o allure-report --clean",
+    "exec-test": "npx cypress run --headed --env allure=true",
+    "generate-report": "npx allure generate allure-results -o allure-report --clean",
     "open-report": "npx allure open",
-    "test":"npm run clean-reports && npm run exec-test & npm run generate-report && npm run open-report"
+    "test": "npm run clean-reports && npm run exec-test & npm run generate-report && npm run open-report",
+    "cy:parallel" : "npm run clean-reports && cypress-parallel -s exec-test -t 2 -d ./cypress/e2e/tests & npm run generate-report"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@mmisty/cypress-allure-adapter": "^3.2.0",
-    "cypress": "^13.15.0"
+    "cypress": "^13.15.0",
+    "cypress-parallel": "^0.14.0"
   },
   "dependencies": {
     "@shelex/cypress-allure-plugin": "^2.40.2",

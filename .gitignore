@@ -8,6 +8,7 @@
 node_modules/*
 allure-report/*
 allure-results/*
+runner-results/*
 TCs.pdf
 
 # Ignorar archivos generados por Cypress como videos o capturas de pantalla.
