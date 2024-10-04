@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean-reports": "rimraf ./allure-report && rimraf ./allure-results",
-    "exec-test": "npx cypress run --headed --env allure=true",
+    "exec-test": "npx cypress run --env allure=true",
     "generate-report": "npx allure generate allure-results -o allure-report --clean",
     "open-report": "npx allure open",
     "test": "npm run clean-reports && npm run exec-test & npm run generate-report && npm run open-report",
